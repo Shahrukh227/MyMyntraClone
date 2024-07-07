@@ -126,7 +126,7 @@ const itemsSlice = createSlice({
   initialState : DEFAULT_VALUE,
   reducers : {
     addingInitialItems : (state,action)=>{
-      return action.payload;
+      return state;
     }
   }
   })
