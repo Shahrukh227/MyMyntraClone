@@ -123,7 +123,7 @@ const DEFAULT_VALUE =[
 
 const itemsSlice = createSlice({
   name : "items",
-  initialState : [],
+  initialState : DEFAULT_VALUE,
   reducers : {
     addingInitialItems : (state,action)=>{
       return action.payload;

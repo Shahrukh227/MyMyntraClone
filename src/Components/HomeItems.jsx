@@ -5,34 +5,34 @@ import { fetchActions } from '../Store/fetching'
 import { itemsAction } from '../Store/itemsSlice'
 
 function HomeItems() {
- const dispath =  useDispatch()
- const fetchedItems = useSelector(store=>store.fetchItems) 
+//  const dispath =  useDispatch()
+//  const fetchedItems = useSelector(store=>store.fetchItems) 
 
-  useEffect(()=>{
-if(fetchedItems.fetching) return;
-    const constructor = new AbortController;
-    const signal = constructor.signal
+//   useEffect(()=>{
+// if(fetchedItems.fetching) return;
+//     const constructor = new AbortController;
+//     const signal = constructor.signal
 
-    // dispath(fetchActions.markFetchStarted())
-fetch("http://localhost:8080/items" , {signal} )
-.then(resp=>resp.json())
-.then(data=>{
+//     // dispath(fetchActions.markFetchStarted())
+// fetch("http://localhost:8080/items" , {signal} )
+// .then(resp=>resp.json())
+// .then(data=>{
   
-  dispath(itemsAction.addingInitialItems(data.items[0]));
-  dispath(fetchActions.fetched())
-  // dispath(fetchActions.markFetchFinish())
-})
+//   dispath(itemsAction.addingInitialItems(data.items[0]));
+//   dispath(fetchActions.fetched())
+//   // dispath(fetchActions.markFetchFinish())
+// })
 
 
-return ()=>{ 
-  constructor.abort()
-  }
+// return ()=>{ 
+//   constructor.abort()
+//   }
   
   
 
-  }
+//   }
   
-  ,[])
+//   ,[])
 
  const item = useSelector(store=>store.items)
   return (
